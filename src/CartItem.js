@@ -9,11 +9,11 @@ const CartItem = (props) => {
     onDecreaseQuantity,
     onDeleteProduct,
   } = props;
-    return (
-      <div className="cart-item">
+  return (
+    <div className="cart-item">
       {props.jsx}
       <div className="left-block">
-      <img style={styles.image} />
+        <img style={styles.image} />
       </div>
       <div className="right-block">
         <div style={{ fontSize: 25 }}>{title}</div>
