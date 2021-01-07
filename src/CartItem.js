@@ -21,12 +21,11 @@ const CartItem = (props) => {
         <div style={{ color: "#777" }}>Qty: {qty} </div>
         <div className="cart-item-actions">
           {/* Buttons */}
-
           <img
-            alt="increase"
+            alt="delete"
             className="action-icons"
-            src="https://image.flaticon.com/icons/svg/992/992651.svg"
-            onClick={() => onIncreaseQuantity(product)}
+            src="https://image.flaticon.com/icons/svg/1214/1214428.svg"
+            onClick={() => onDeleteProduct(product.id)}
           />
           <img
             alt="decrease"
@@ -35,10 +34,10 @@ const CartItem = (props) => {
             onClick={() => onDecreaseQuantity(product)}
           />
           <img
-            alt="delete"
+            alt="increase"
             className="action-icons"
-            src="https://image.flaticon.com/icons/svg/1214/1214428.svg"
-            onClick={() => onDeleteProduct(product.id)}
+            src="https://image.flaticon.com/icons/svg/992/992651.svg"
+            onClick={() => onIncreaseQuantity(product)}
           />
         </div>
       </div>
