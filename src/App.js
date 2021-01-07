@@ -33,7 +33,9 @@ class App extends React.Component {
     //     });
     //     this.setState({ products, loading: false });
     //   });
-    this.db.collection("products").onSnapshot((snapshot) => {
+    this.db.collection("products")
+    // .where('price','>' , 99) for quering the data .orderby() for sorting the data
+    .onSnapshot((snapshot) => {
       console.log(snapshot);
       snapshot.docs.map((doc) => {
         console.log(doc.data());
@@ -132,7 +134,7 @@ class App extends React.Component {
   getCartTotal = () => {
     const { products } = this.state;
     let count = 0;
-    products.forEach((product) => {
+    products.map((product) => {
       count += product.qty * product.price;
     });
     return count;
@@ -153,7 +155,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <NavBar count={this.getCartCount()} />
-        {/* <button onClick={this.addProduct}>add a product</button> */}
+        <button onClick={this.addProduct}>add a product</button>
         <Cart
           products={products}
           onIncreaseQuantity={this.handleIncreaseQuantity}
